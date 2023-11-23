@@ -48,6 +48,7 @@ class RunMain
          gotUserResponse = true;
          if (code<=32)
             break;*/
+         gotUserResponse = true;
          var answer = "y"; //that's enough. please just do it.
          if (answer=="y" || answer=="Y")
          {
