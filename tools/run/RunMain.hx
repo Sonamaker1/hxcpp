@@ -29,41 +29,14 @@ class RunMain
       log("    Build the binaries appropriate to your system(s), this can be done with:");
       log("     cd project");
       log("     neko build.n");
+      log("");
+      log("[Setup starting]");
+      setup();
+      log("[Setup ended]");
+      if (!executeHxcpp())
+         break;
+      return;
 
-      var gotUserResponse = false;
-      sys.thread.Thread.create(function() {
-         Sys.sleep(30);
-         if (!gotUserResponse)
-         {
-            Sys.println("\nTimeout waiting for response.");
-            Sys.println("Can't continue without hxcpp.n");
-            Sys.exit(-1);
-         }
-      } );
-
-      while(true)
-      {
-         Sys.print("\nWould you like to do this now [y/n]");
-         /*var code = Sys.getChar(true);
-         gotUserResponse = true;
-         if (code<=32)
-            break;*/
-         gotUserResponse = true;
-         var answer = "y"; //that's enough. please just do it.
-         if (answer=="y" || answer=="Y")
-         {
-            log("");
-            setup();
-            if (!executeHxcpp())
-               break;
-            return;
-         }
-         if (answer=="n" || answer=="N")
-            break;
-      }
-
-      Sys.println("\nCan't continue without hxcpp.n");
-      Sys.exit(-1);
    }
 
    public static function setup()
