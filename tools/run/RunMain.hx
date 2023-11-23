@@ -44,10 +44,10 @@ class RunMain
       while(true)
       {
          Sys.print("\nWould you like to do this now [y/n]");
-         var code = Sys.getChar(true);
+         /*var code = Sys.getChar(true);
          gotUserResponse = true;
          if (code<=32)
-            break;
+            break;*/
          var answer = "y"; //that's enough. please just do it.
          if (answer=="y" || answer=="Y")
          {
