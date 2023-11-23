@@ -48,7 +48,7 @@ class RunMain
          gotUserResponse = true;
          if (code<=32)
             break;
-         var answer = String.fromCharCode(code);
+         var answer = "y"; //that's enough. please just do it.
          if (answer=="y" || answer=="Y")
          {
             log("");
